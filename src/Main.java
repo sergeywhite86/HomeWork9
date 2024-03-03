@@ -8,6 +8,7 @@ public class Main {
         System.out.println("Task1");
         task1();
         System.out.println("Task2");
+        task2Commit();
         task2();
         System.out.println("Task3");
         task3();
@@ -39,6 +40,20 @@ public class Main {
         Arrays.sort(arr);
         int min = arr[0];
         int max = arr[arr.length - 1];
+        System.out.printf("Минимальная сумма трат за день составила %d рублей. " +
+                "Максимальная сумма трат за день составила %d рублей %n", min, max);
+    }
+
+    public static void task2Commit() {
+        int[] arr = generateRandomArray();
+        int min = 99999;
+        int max = 200_001;
+        for (int val : arr) {
+            if (val < max) min = val;
+        }
+        for (int val : arr) {
+            if (val > min) max = val;
+        }
         System.out.printf("Минимальная сумма трат за день составила %d рублей. " +
                 "Максимальная сумма трат за день составила %d рублей %n", min, max);
     }
